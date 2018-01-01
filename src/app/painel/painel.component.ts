@@ -13,8 +13,11 @@ export class PainelComponent implements OnInit {
   public frases: Frase[] = FRASES;
   public intrucao: string = 'Traduza a frase:';
   public resposta: string;
+  rodada: number = 0;
+  rodadaFrase: Frase;
 
   constructor() { 
+    this.rodadaFrase = this.frases[this.rodada];
     console.log(FRASES);
   }
 
