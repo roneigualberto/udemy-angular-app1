@@ -12,13 +12,13 @@ export class PainelComponent implements OnInit {
 
   public frases: Frase[] = FRASES;
   public intrucao: string = 'Traduza a frase:';
-  public resposta: string;
+  public resposta: string = '';
   rodada: number = 0;
   rodadaFrase: Frase;
   public progresso: number = 0;
 
   constructor() { 
-    this.rodadaFrase = this.frases[this.rodada];
+    this.atualizaRodada();
     console.log(FRASES);
   }
 
@@ -35,13 +35,17 @@ export class PainelComponent implements OnInit {
     if (this.rodadaFrase.frasePtBr ==  this.resposta) {
       alert('A tradução está correta');
       this.rodada++;
-      console.log(this.rodada);
-      this.rodadaFrase = this.frases[this.rodada];
+      this.atualizaRodada();
       this.progresso += 25;
     }
     else {
       alert('A tradução está incorreta');
     }
+  }
+
+  public atualizaRodada(): void {
+    this.rodadaFrase = this.frases[this.rodada];
+    this.resposta = '';
   }
 
  
