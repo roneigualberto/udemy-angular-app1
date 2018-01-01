@@ -18,8 +18,7 @@
         <h6>{{instrucao}}</h6>
         <p>{{ frases[1].fraseEng }}</p>
         <div class="form-group">
-          <textarea class="form-control" rows="3">
-            </textarea>
+          <textarea class="form-control" rows="3" (input)="atualizaResposta()"></textarea>
         </div>
 
         <div class="row">
