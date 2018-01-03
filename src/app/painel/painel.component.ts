@@ -24,7 +24,6 @@ export class PainelComponent implements OnInit, OnDestroy {
 
   constructor() { 
     this.atualizaRodada();
-    console.log(FRASES);
   }
 
   ngOnInit() {
@@ -65,7 +64,7 @@ export class PainelComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    console.log('');
+   
   }
 
  
