@@ -1,14 +1,15 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit,OnDestroy, EventEmitter, Output } from '@angular/core';
 
 import { Frase } from '../shared/frase.model';
 import { FRASES } from './frases.mock';
+import { OnDestroy } from '@angular/core/src/metadata/lifecycle_hooks';
 
 @Component({
   selector: 'app-painel',
   templateUrl: './painel.component.html',
   styleUrls: ['./painel.component.css']
 })
-export class PainelComponent implements OnInit {
+export class PainelComponent implements OnInit, OnDestroy {
 
   public frases: Frase[] = FRASES;
   public intrucao: string = 'Traduza a frase:';
@@ -61,6 +62,10 @@ export class PainelComponent implements OnInit {
   public atualizaRodada(): void {
     this.rodadaFrase = this.frases[this.rodada];
     this.resposta = '';
+  }
+
+  ngOnDestroy(): void {
+    console.log('');
   }
 
  
