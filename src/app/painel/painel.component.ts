@@ -2,7 +2,7 @@ import { Component, OnInit,OnDestroy, EventEmitter, Output } from '@angular/core
 
 import { Frase } from '../shared/frase.model';
 import { FRASES } from './frases.mock';
-import { OnDestroy } from '@angular/core/src/metadata/lifecycle_hooks';
+
 
 @Component({
   selector: 'app-painel',
